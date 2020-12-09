@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-from decouple import config
 import dj_database_url
 import sentry_sdk
 from dynaconf import settings as _ds
@@ -83,12 +82,6 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }}
-
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
 
 
 # Password validation
